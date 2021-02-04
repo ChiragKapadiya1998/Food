@@ -3,9 +3,10 @@ import {View ,Text,FlatList,StyleSheet} from 'react-native';
 import yelp from './api/yelp';
 
 const ResultShowScreen = ({route}) => {
-  const {item}=route.params;
+  const {id}=route.params;
+  console.log(id);
     const [result,setResult] = useState(null);
-    const id = item;
+ 
 
     const getResult = async id => {
         const response = await yelp.get(`/${id}`);
